@@ -136,4 +136,65 @@ namespace MyWeather.Models
         public Sys Sys { get; set; }
     }
 
+    #region Model Standard
+    public class WeatherRoot2
+    {
+        [JsonProperty("coord")]
+        public Coord Coordinates { get; set; } = new Coord();
+
+        [JsonProperty("weather")]
+        public List<Weather> Weather { get; set; } = new List<Weather>();
+
+        [JsonProperty("base")]
+        public string Base { get; set; } = string.Empty;
+
+        [JsonProperty("main")]
+        public Main MainWeather { get; set; } = new Main();
+
+        [JsonProperty("visibility")]
+        public int Visibility { get; set; } = 0;
+
+        [JsonProperty("wind")]
+        public Wind Wind { get; set; } = new Wind();
+
+        [JsonProperty("clouds")]
+        public Clouds Clouds { get; set; } = new Clouds();
+
+        [JsonProperty("dt")]
+        public string Date { get; set; } = string.Empty;
+
+        [JsonProperty("sys")]
+        public Sys2 System { get; set; } = new Sys2();
+
+        [JsonProperty("timezone")]
+        public int TimeZone { get; set; } = 0;
+
+        [JsonProperty("id")]
+        public int CityId { get; set; } = 0;
+
+        [JsonProperty("name")]
+        public string Name { get; set; } = string.Empty;
+
+        [JsonProperty("cod")]
+        public int Cod { get; set; } = 0;
+    }
+
+    public class Sys2
+    {
+        [JsonProperty("type")]
+        public int Type { get; set; } = 0;
+
+        [JsonProperty("id")]
+        public int Id { get; set; } = 0;
+
+        [JsonProperty("country")]
+        public string Country { get; set; } = string.Empty;
+
+        [JsonProperty("sunrise")]
+        public string SunRise { get; set; } = string.Empty;
+
+        [JsonProperty("sunset")]
+        public string SunSet { get; set; } = string.Empty;
+    }
+    #endregion
 }
